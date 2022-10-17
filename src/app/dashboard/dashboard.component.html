@@ -1,0 +1,12 @@
+  <div class="container px-4 py-5">
+    <h2 class="pb-2 border-bottom">Dashboard info:</h2>
+        <p>Connected to the token at address {{tokenContractAddress}}</p>
+        <p>This token has a total supply of: {{tokenTotalSupply}}</p>
+        <p>Your wallet address is {{walletAddress}}</p>
+        <p>This wallet has a balance of: {{etherBalance}}</p>
+        <form [formGroup]="claimForm" (ngSubmit)="request()">
+          <input type="text" placeholder="your name" name="name" formControlName="name">
+          <input type="id" placeholder="your id" name="id" formControlName="id">
+          <button class="btn btn-primary my-2" type="submit" [disabled]="!claimForm.valid">Request tokens</button>
+        </form>
+  </div>
